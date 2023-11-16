@@ -78,3 +78,5 @@ gem "foreman", "~> 0.87.2"
 gem "awesome_print", "~> 1.9"
 
 gem "byebug", "~> 11.1"
+
+gem "acts_as_list", "~> 1.1"

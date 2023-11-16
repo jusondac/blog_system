@@ -11,9 +11,9 @@
       <%= button_to "Destroy this article", article_path(@article), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
     <%= link_to "Back to articles", articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="mx-aut md:w-2/3 w-full flex flex-col gap-5 mt-5">
+    <div class="mx-aut w-full flex flex-col gap-5 mt-5">
         <% @article.contents.each do |content| %>
-          <div class="inline-block ml-2">
+          <div class="inline-block ml-2 border">
               <%= content.body %>
           </div>
         <% end %>

@@ -1,8 +1,16 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing article</h1>
-
-  <%= render "form", article: @article %>
-
-  <%= link_to "Show this article", @article, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to articles", articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+<div class="mx-2 flex gap-3 w-full">
+  <div class="w-1/2">
+    <h1 class="font-bold text-4xl">Editing article</h1>
+    <%= render "form", article: @article %>
+    <%= link_to "Show this article", @article, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Back to articles", articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+    <ul id="content-list" class="w-1/2 flex flex-col gap-2" data-controller="sortable" data-sortable-url-value="<%= content_path(id: ":id") %>">
+      <% @article.contents.order(:position).each do |content| %>
+        <li data-sortable-handle="" class="border p-2" data-sortable-id="<%= content.id %>">
+          <div><%= content.body %></div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

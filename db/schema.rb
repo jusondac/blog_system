@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_16_032905) do
   create_table "contents", force: :cascade do |t|
     t.integer "article_id", null: false
     t.text "body"
+    t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_contents_on_article_id"
