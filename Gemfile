@@ -73,3 +73,8 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "foreman", "~> 0.87.2"
+gem "awesome_print", "~> 1.9"
+
+gem "byebug", "~> 11.1"
